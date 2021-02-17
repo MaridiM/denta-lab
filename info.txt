@@ -1,6 +1,0 @@
-role:
-    0 - Guest
-    1 - Patient
-    2 - Dentis
-    3 - Manager
-    4 - Admin
