@@ -1,0 +1,49 @@
+{
+  "name": "denta-lab",
+  "version": "1.0.0",
+  "description": "Mandger for dantist",
+  "main": "app.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon --exec server.js",
+    "client": "npm run start --prefix client",
+    "client-install": "npm install --prefix client",
+    "client-build": "npm run build --prefix client",
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaridiM/denta-lab.git"
+  },
+  "keywords": [
+    "Dentist",
+    "patient",
+    "manager",
+    "help"
+  ],
+  "author": "MaridiM <maridim.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaridiM/denta-lab/issues"
+  },
+  "homepage": "https://github.com/MaridiM/denta-lab#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "cookie-parser": "^1.4.5",
+    "csurf": "^1.11.0",
+    "helmet": "^4.4.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  },
+  "engines": {
+    "node": "14.4.0"
+  }
+}
