@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from "react-i18next"
-import mobileSize from 'utils/helpers/mobileSize'
+// import mobileSize from 'utils/helpers/mobileSize'
 
 
 import { AppRoutes } from 'routes'
@@ -11,7 +11,7 @@ const App = () => {
     
     useEffect(() => {
         i18n.changeLanguage(lng)
-        mobileSize()
+        // mobileSize()
     },[i18n, lng, mobileSize])
     
     const changeLanguage = (lng) => {
