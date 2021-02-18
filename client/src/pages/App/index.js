@@ -12,7 +12,7 @@ const App = () => {
     useEffect(() => {
         i18n.changeLanguage(lng)
         // mobileSize()
-    },[i18n, lng, mobileSize])
+    },[i18n, lng])
     
     const changeLanguage = (lng) => {
         setLng(lng)
