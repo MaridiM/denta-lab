@@ -11,7 +11,7 @@ const App = () => {
     
     useEffect(() => {
         i18n.changeLanguage(lng)
-        mobileSize
+        mobileSize()
     },[i18n, lng, mobileSize])
     
     const changeLanguage = (lng) => {
