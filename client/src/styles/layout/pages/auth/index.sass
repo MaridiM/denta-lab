@@ -1,0 +1,67 @@
+// 
+// AUTH PAGES
+// 
+@import 'login'
+@import 'change-account'
+@import 'register'
+@import 'help'
+@import 'password'
+
+// 
+// AUTH PAGES MEDIA
+// 
+@import './_media/index'
+
+
+.auth-modal
+    width: 1000px
+    max-height: 600px
+    height: 100%
+    padding: 50px 0
+    background: #fff
+    box-shadow: $modalShadow
+    border-radius: 10px
+    overflow: hidden
+    display: flex
+    margin: 0 50px
+    &__help
+        display: flex
+        justify-content: center
+        margin-top: 2px
+        &-img
+            margin-left: 5px
+            width: 16px
+            height: 18px
+    &-title
+        font-size: 28px
+        line-height: 28px
+        margin-bottom: 25px
+        text-shadow: $middleShadow
+    .image-wrapper 
+        display: flex
+        justify-content: center
+        align-itemd: center
+        width: 50%
+        max-width: 500px
+        height: 100%
+        max-height: 500px
+        border-left: 4px solid rgba($textColor, .15)
+        overflow: hidden
+        &__img
+            width: 100%
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            &--change-account,
+            &--register
+                padding: 0 50px
+                display: flex
+                align-items: center
+                justify-content: center
+                img
+                    max-height: 497px
+                    width: auto 
+
+
+           

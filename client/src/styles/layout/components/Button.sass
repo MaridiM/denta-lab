@@ -1,0 +1,73 @@
+a[disabled] 
+    pointer-events: none
+    opacity: .5
+
+button[disabled] 
+    pointer-events: none
+    opacity: .5
+
+.btn
+    height: 40px
+    min-width: 100px
+    padding: 0 15px
+    border-radius: 10px
+    background: $mainBlue
+    font-size: 16px
+    color: #fff
+    border: none
+    outline: none
+    text-shadow: $middleShadow
+    box-shadow: $blueShadow
+    
+    &:hover
+        opacity: .8
+    &-facebook
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 10px 0
+        color: #fff
+        background: $facebookBlue
+    &-google
+        width: 100%
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 10px 0
+        color: $textColor 
+        background: #fff 
+.link
+    text-decoration: none
+    color: $mainBlue
+    &:hover
+        opacity: .8
+    &-btn
+        box-shadow: $middleShadow
+        text-shadow: $baseShadow
+        height: 40px
+        line-height: 38px
+        color: $textColor
+        padding: 0 30px
+        border-radius: 10px
+    &-next 
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 40px
+        width: 100%
+        border-radius: 10px
+        background: $mainBlue
+        font-size: 16px
+        color: #fff
+        text-shadow: $middleShadow
+        box-shadow: $blueShadow
+        outline: none
+    &:hover
+        opacity: .8
+.no-style
+    text-decoration: none
+    color: $textColor
+    background: none
+    outline: none
+    border: none

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from "react-i18next"
 
-// import { AppRoutes } from 'routes'
+import { AppRoutes } from 'routes'
 
 const App = () => {
     const [ lng, setLng ] = useState('en')
@@ -16,8 +16,7 @@ const App = () => {
     }
 
     return (
-        // <AppRoutes changeLanguage={changeLanguage} />
-        <h1>TEST</h1>
+        <AppRoutes changeLanguage={changeLanguage} />
     )
 }
 
