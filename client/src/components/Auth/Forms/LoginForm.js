@@ -5,13 +5,11 @@ import PropTypes from 'prop-types'
 import { Input, Button, Select, Facebook } from 'components'
 import { routes } from 'routes'
 import { GoogleSVG } from 'icons'
-import { useForm, useTranslate } from 'hooks'
+import { useForm } from 'hooks'
 
 
 const { password: {forgot}, register: {changeAccount} } = routes
-console.log(useTranslate)
-const LoginForm = () => {
-// const LoginForm = ({ useTranslate }) => {
+const LoginForm = ({ useTranslate }) => {
     const { translation: {
         login: { title, selectList, buttons, links },
         base: { inputs }
