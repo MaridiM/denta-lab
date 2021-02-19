@@ -8,18 +8,24 @@
     box-sizing: border-box
     text-shadow: $baseShadow
 
-html,
+html
+    background-color: red
+    overflow: hidden
+    width:100%
+            
 body 
+    position: fixed /* prevent overscroll bounce*/
+    height: 100%
+    overflow-y: scroll
+    -webkit-overflow-scrolling: touch /* iOS velocity scrolling */
     background: $background
     font-size: 16px
     line-height: 16px
     color: $textColor
-    height: 100%
 
 #root 
     width: 100vw
     height: 100vh
-    min-height: -webkit-fill-available
 
 img
     width: 100%
