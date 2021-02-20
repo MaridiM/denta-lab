@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { GoogleLogin } from 'react-google-login'
 
-import { Input, Button, Select, Facebook } from 'components'
+import { Input, Button, Select, FacebookButton, GoogleButton } from 'components'
 import { routes } from 'routes'
-import { GoogleSVG } from 'icons'
 import { useForm } from 'hooks'
 
 
@@ -17,9 +15,7 @@ const LoginForm = ({ useTranslate }) => {
 
     const { onChange, onSubmit, onBlur, validate } = useForm({})
 
-    const responseGoogle = (response) => {
-        console.log(response)
-    }
+    
     return (
         <form className='login-form'  method="POST">
             <h2 className='auth-modal-title'>{ title }</h2>
@@ -60,22 +56,8 @@ const LoginForm = ({ useTranslate }) => {
             </div>
 
             <div className='login-form__social'>
-                <Facebook>{ buttons.facebook }</Facebook>
-                <GoogleLogin
-                    clientId="482241606181-2ph3qeu59dp7hju4curft47krnu0fugj.apps.googleusercontent.com"
-                    render={renderProps => (
-                        <Button 
-                            className='btn-google'
-                            onClick={renderProps.onClick}
-                            >
-                            <GoogleSVG className='btn__img' />
-                            { buttons.google }
-                        </Button>
-                    )}
-                    onSuccess={responseGoogle}
-                    onFailure={responseGoogle}
-                    cookiePolicy={'single_host_origin'}
-                />
+                <FacebookButton>{ buttons.facebook }</FacebookButton>
+                <GoogleButton>{ buttons.google }</GoogleButton>
             </div> 
         </form> 
     )

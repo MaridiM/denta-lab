@@ -39,7 +39,6 @@ export const useFacebook = () => {
     const facebookLogin = () => {  
         window.FB.getLoginStatus( response => {   
             statusChangeCallback(response)
-            console.log(response.authResponse)
         })
     }
 
@@ -56,19 +55,19 @@ export const useFacebook = () => {
     // Initial FB by JS SDK
     window.fbAsyncInit = async () => {
         await window.FB.init({
-            appId      : '462259068265305',                     // App id from facebook
+            appId      : process.env.REACT_APP_FACEBOOK_APP_ID,                     // App id from facebook
             cookie     : true,                                  // Enable cookies to allow the server to access the session.
             xfbml      : true,                                  // Parse social plugins on this webpage.
-            version    : 'v9.0'                                 // Use this Graph API version for this call.
+            version    : process.env.REACT_APP_FACEBOOK_APP_VERSION                                // Use this Graph API version for this call.
         })
 
-        await window.FB.getLoginStatus( response => {           // Called after the JS SDK has been initialized.
-            if(response.authResponse) {
-                statusChangeCallback(response)    
-            } else { 
-                return null
-            }
-        })
+        // await window.FB.getLoginStatus( response => {           // Called after the JS SDK has been initialized.
+        //     if(response.authResponse) {
+        //         statusChangeCallback(response)    
+        //     } else { 
+        //         return null
+        //     }
+        // })
     }
     
    

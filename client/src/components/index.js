@@ -5,7 +5,6 @@ export {
     Select,
     Img,
     InputSpinner,
-    Facebook
 }
 from './BaseComponents'
 
@@ -21,5 +20,7 @@ export {
     RegisterDentistForm,
     RegisterPatientForm,
     TypeAccount,
+    FacebookButton,
+    GoogleButton,
 }
 from './Auth'

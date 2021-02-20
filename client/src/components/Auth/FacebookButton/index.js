@@ -6,7 +6,7 @@ import { Button } from 'components'
 import { FacebookSVG } from 'icons'
 import { useFacebook } from 'hooks'
 
-const Facebook = ({ children, icon, className }) => {
+const FacebookButton = ({ children, icon, className }) => {
     const { facebookLogin } = useFacebook()  
     
     return (
@@ -20,16 +20,16 @@ const Facebook = ({ children, icon, className }) => {
     )
 }
 
-Facebook.propTypes = {
+FacebookButton.propTypes = {
     children: PropTypes.node,
     icon: PropTypes.string, 
     className: PropTypes.string
 }
 
-Facebook.defaultProps = {
+FacebookButton.defaultProps = {
     children: 'Continue with Facebook',
     icon: null,
     className: ''
 }
 
-export default Facebook
+export default FacebookButton
