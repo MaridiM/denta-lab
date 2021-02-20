@@ -125,6 +125,20 @@ module.exports = function (webpackEnv) {
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
+                overrideBrowserslist: [
+                  '>= 0.5%',
+                  'last 4 versions',
+                  'not dead',
+                  'Chrome >= 60',
+                  'Firefox >= 60',
+                  'not Edge < 79',
+                  'Firefox ESR',
+                  'iOS >= 10',
+                  'Safari >= 10',
+                  'Android >= 6',
+                  'not Explorer <= 11',
+                  'Firefox ESR',
+                ],
                 flexbox: 'no-2009',
               },
               stage: 3,
