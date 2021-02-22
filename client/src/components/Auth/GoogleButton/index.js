@@ -13,6 +13,7 @@ const GoogleButton = ({ children, className, icon, status }) => {
     return (
         <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+            // jsSrc="https://apis.google.com/js/api.js"
             render={renderProps => (
                 <Button 
                     className={classnames('btn-google', className)}
