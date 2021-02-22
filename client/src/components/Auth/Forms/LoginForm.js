@@ -16,10 +16,11 @@ const LoginForm = ({ useTranslate }) => {
     const { onChange, onSubmit, onBlur, validate } = useForm({})
     const { windowSize } = useWindowSize()
 
-    const compareSize = (content, size) => {
-        return windowSize.height < size ? content.split(' ')[content.split(' ').length - 1] : content 
+    const compareSize = (content) => {
+        return windowSize.width < 1366 && windowSize.width > 1024 
+            ? content.split(' ')[content.split(' ').length - 1] 
+            : content 
     }
-
 
     return (
         <form className='login-form'  method="POST">
@@ -61,8 +62,8 @@ const LoginForm = ({ useTranslate }) => {
             </div>
 
             <div className='login-form__social'>
-                <FacebookButton>{ compareSize(buttons.facebook, 680) }</FacebookButton>
-                <GoogleButton>{ compareSize(buttons.google, 680) }</GoogleButton>
+                <FacebookButton>{ compareSize(buttons.facebook) }</FacebookButton>
+                <GoogleButton>{ compareSize(buttons.google) }</GoogleButton>
             </div> 
         </form> 
     )
