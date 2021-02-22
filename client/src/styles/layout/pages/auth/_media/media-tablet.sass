@@ -1,0 +1,48 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) 
+    .auth-modal
+        max-width: 60%
+        .change-account, .register, .password, .help, .login
+            width: 100%
+            .register-form, .password-form, .help-form, .login-form 
+                max-width: 320px
+            .register-form__step 
+                display: block
+        .change-account
+            &__footer
+        .image-wrapper
+            display: none
+
+@media screen and (min-width: 768px) and (max-width: 1024px) and (max-height: 680px)
+    .auth-modal
+        max-width: 50%
+        .register
+            .register-form__step 
+                display: none
+
+@media only screen and (min-height: 1024px) and (max-width: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)
+    .auth-modal
+        max-width: 70%
+        max-height: 600px
+        height: 100%
+        &-title
+            margin-bottom: 25px
+        .change-account, .register, .password, .help, .login
+            .register-form, .password-form, .help-form, .login-form 
+                max-width: 320px
+                .register-form__step 
+                    display: block
+                &__social
+                    display: block
+                    .btn-facebook, .btn-google
+                        margin: 5px 0
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)
+    .auth-modal
+        max-width: 50%
+        max-height: 600px
+        height: 100%
+        .register-form, .password-form, .help-form, .login-form 
+            max-width: 320px
+        .login
+            &__footer
+                max-width: 320px

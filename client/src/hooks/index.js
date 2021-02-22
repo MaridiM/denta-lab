@@ -3,6 +3,7 @@ export {
     useForm,
     useTranslate,
     useValidation, 
+    useWindowSize,
 } from './core'
 
 // Auth hooks

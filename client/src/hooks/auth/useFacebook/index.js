@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import 'utils/facebookSDK'
 
 export const useFacebook = () => {
     const [facebookResponse, setFacebookResponse] = useState({})
@@ -60,17 +59,25 @@ export const useFacebook = () => {
             xfbml      : true,                                  // Parse social plugins on this webpage.
             version    : process.env.REACT_APP_FACEBOOK_APP_VERSION                                // Use this Graph API version for this call.
         })
-
+        
         // await window.FB.getLoginStatus( response => {           // Called after the JS SDK has been initialized.
         //     if(response.authResponse) {
-        //         statusChangeCallback(response)    
-        //     } else { 
-        //         return null
-        //     }
-        // })
+            //         statusChangeCallback(response)    
+            //     } else { 
+                //         return null
+                //     }
+                // })
     }
-    
-   
+            
+    // auto add connection to facebook jssdk
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'))
+            
     
     return { 
         facebookLogin, 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Input, Button, Select, FacebookButton, GoogleButton } from 'components'
 import { routes } from 'routes'
-import { useForm } from 'hooks'
+import { useForm, useWindowSize } from 'hooks'
 
 
 const { password: {forgot}, register: {changeAccount} } = routes
@@ -14,8 +14,13 @@ const LoginForm = ({ useTranslate }) => {
     }} = useTranslate('auth', [['login', true], ['base', true]])
 
     const { onChange, onSubmit, onBlur, validate } = useForm({})
+    const { windowSize } = useWindowSize()
 
-    
+    const compareSize = (content, size) => {
+        return windowSize.height < size ? content.split(' ')[content.split(' ').length - 1] : content 
+    }
+
+
     return (
         <form className='login-form'  method="POST">
             <h2 className='auth-modal-title'>{ title }</h2>
@@ -56,8 +61,8 @@ const LoginForm = ({ useTranslate }) => {
             </div>
 
             <div className='login-form__social'>
-                <FacebookButton>{ buttons.facebook }</FacebookButton>
-                <GoogleButton>{ buttons.google }</GoogleButton>
+                <FacebookButton>{ compareSize(buttons.facebook, 680) }</FacebookButton>
+                <GoogleButton>{ compareSize(buttons.google, 680) }</GoogleButton>
             </div> 
         </form> 
     )

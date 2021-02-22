@@ -9,11 +9,13 @@ const Auth = ({changeLanguage}) => {
     return (
         <div className='wrapper auth'>
             <div className='auth-modal'>
-                <AuthRoutes 
-                    changeLanguage={changeLanguage} 
-                    useTranslate={useTranslate}
-                    />
-                <AuthImgModule />
+                <div className='auth-modal-content'>
+                    <AuthRoutes 
+                        changeLanguage={changeLanguage} 
+                        useTranslate={useTranslate}
+                        />
+                    <AuthImgModule />
+                </div>
             </div>
         </div>
     )
