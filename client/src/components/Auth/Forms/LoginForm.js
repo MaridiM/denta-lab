@@ -62,8 +62,8 @@ const LoginForm = ({ useTranslate }) => {
             </div>
 
             <div className='login-form__social'>
-                <FacebookButton>{ compareSize(buttons.facebook) }</FacebookButton>
-                <GoogleButton>{ compareSize(buttons.google) }</GoogleButton>
+                <FacebookButton>{ compareSize(buttons.facebook) }{windowSize.width}</FacebookButton>
+                <GoogleButton>{ compareSize(buttons.google) } {windowSize.height}</GoogleButton>
             </div> 
         </form> 
     )
