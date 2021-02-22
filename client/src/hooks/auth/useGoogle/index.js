@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { GoogleLogin } from 'react-google-login'
 
 
 export const useGoogle = () => {
