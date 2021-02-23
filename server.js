@@ -1,6 +1,6 @@
-const express = require('express')
-const path = require('path')
-const bodyParser = require('body-parser')
+import express from 'express'
+import path from 'path'
+import bodyParser from 'body-parser'
 
 require('dotenv').config()
 
