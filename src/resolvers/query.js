@@ -1,7 +1,8 @@
 const queries = {
-    help: () => "hepl data"
+    help: () => "help text"
+    }
 }
 
-module.exports.Query = {
+export const Query = {
     ...queries
 }
