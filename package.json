@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "babel-node ./src/index.js",
     "server": "npm run clean && nodemon --exec babel-node ./src/index.js",
     "client": "cd client && npm run start",
     "client-install": "cd client && npm install",
