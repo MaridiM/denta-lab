@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/resolvers/query.js"],"names":["queries","help","Query"],"mappings":";;;;;;;;;;;;;AAAA,IAAMA,OAAO,GAAG;AACZC,EAAAA,IAAI,EAAE;AAAA,WAAM,WAAN;AAAA;AADM,CAAhB;;AAIO,IAAMC,KAAK,qBACXF,OADW,CAAX","sourcesContent":["const queries = {\r\n    help: () => \"help text\"\r\n}\r\n\r\nexport const Query = {\r\n    ...queries\r\n}"],"file":"query.js"}
