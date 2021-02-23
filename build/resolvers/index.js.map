@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/resolvers/index.js"],"names":["module","exports","resolvers","Query"],"mappings":";;AAAA;;AAEAA,MAAM,CAACC,OAAP,CAAeC,SAAf,GAA2B;AACvBC,EAAAA,KAAK,EAALA;AADuB,CAA3B","sourcesContent":["import { Query } from './query'\r\n\r\nmodule.exports.resolvers = {\r\n    Query\r\n}"],"file":"index.js"}
