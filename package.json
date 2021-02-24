@@ -28,7 +28,6 @@
   },
   "homepage": "https://github.com/MaridiM/denta-lab#readme",
   "devDependencies": {
-    "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.1",
     "@babel/node": "^7.13.0",
     "@babel/preset-env": "^7.13.5",
@@ -37,6 +36,7 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "@babel/cli": "^7.13.0",
     "apollo-datasource": "^0.7.3",
     "apollo-server-express": "^2.21.0",
     "bcryptjs": "^2.4.3",
