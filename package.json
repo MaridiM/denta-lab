@@ -12,7 +12,7 @@
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "clean": "rm -rf ./node_modules/.cache/babel-loader",
     "build-clean": "rm -rf build && mkdir build",
-    "build-babel": "npm install babel-cli -S && babel -d ./build ./src -s",
+    "build-babel": "npm install @babel/cli -S && babel -d ./build ./src -s",
     "build": "npm run build-clean && npm run build-babel",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
