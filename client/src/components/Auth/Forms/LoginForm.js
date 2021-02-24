@@ -56,7 +56,7 @@ const LoginForm = ({ useTranslate }) => {
             <div className='btn-group'>
                 <Button to={changeAccount}>{ links.register }</Button>
                 <Button 
-                    type='submit'
+                    // type='submit'
                     onClick={onSubmit}
                 >{ buttons.submit }</Button>
             </div>

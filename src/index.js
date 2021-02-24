@@ -2,9 +2,13 @@ import './init/app'
 import { PORT } from './init/config'
 import { server } from './init/server'
 import './init/db'
+import { graphqlPath, subscriptionsPath } from './init/apolloServer'
 
 server.listen(PORT, err => {
-    err 
-        ? console.log('❌ Server is not running. ' + err)
-        : console.log(`✔️ Server is running on http://localhost:${PORT}`)
+    if( !err ) {
+        console.log(`✔️ Server ready at http://localhost:${PORT}${graphqlPath}`)
+        console.log(`✔️ Subscriptions ready at http://localhost:${PORT}${subscriptionsPath}`)
+    } else {
+        console.log('❌ Server is not running. ' + err)
+    }
 })

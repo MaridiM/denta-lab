@@ -8,6 +8,9 @@ import { resolvers } from '../resolvers'
 
 // Init Apollo server
 const apolloServer = new ApolloServer({
+    subscriptions: {// Change subscriptions path
+        path: '/subscriptions'
+    },
     typeDefs,   //types
     resolvers,   //actions
     dataSources: () => {
@@ -20,12 +23,14 @@ const apolloServer = new ApolloServer({
     },
     playground: {
         settings: {
-        "request.credentials": "include"
+            "request.credentials": "include"
         }
     }
 })
 
 // Endpoints
 const { graphqlPath, subscriptionsPath } = apolloServer
+// Set path to subscriptions
+
 
 export { apolloServer, graphqlPath, subscriptionsPath }
