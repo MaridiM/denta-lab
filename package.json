@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/MaridiM/denta-lab#readme",
   "devDependencies": {
+    "@babel/cli": "^7.13.0",
     "@babel/core": "^7.13.1",
     "@babel/node": "^7.13.0",
     "@babel/preset-env": "^7.13.5",
