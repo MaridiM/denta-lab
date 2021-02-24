@@ -11,9 +11,11 @@
     "client-build": "cd client && npm run build",
     "dev": "concurrently \"npm run server\"  \"npm run client\"",
     "clean": "rm -rf ./node_modules/.cache/babel-loader",
+    "poststart": "npm prune --production",
     "build-clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src -s",
     "build": "npm run build-clean && npm run build-babel",
+    "heroku-prebuild": "echo This runs before Heroku installs dependencies.",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "repository": {
