@@ -2,19 +2,21 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import session from 'express-session'
 import cors from 'cors'
-import morgan from 'morgan'
 import path from 'path'
 
 require('dotenv').config()
 
 import { sessionOptions, corsOptions } from './config'
+import { readToken } from './readToken'
+
 const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session(sessionOptions))
 app.use(cors(corsOptions))
-app.use(morgan('dev'))
+
+app.use(readToken)
 
 // Static on  production build
 if (process.env.NODE_ENV === 'production') {
