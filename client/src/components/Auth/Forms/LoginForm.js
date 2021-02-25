@@ -17,7 +17,7 @@ const LoginForm = ({ useTranslate }) => {
     const { windowSize } = useWindowSize()
 
     const compareSize = (content) => {
-        return windowSize.width < 1366 && windowSize.width > 1024 
+        return windowSize.width <= 1366 && windowSize.width >= 1024 
             ? content.split(' ')[content.split(' ').length - 1] 
             : content 
     }
