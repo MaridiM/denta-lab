@@ -4,8 +4,9 @@ import { ApolloServer } from 'apollo-server-express'
 import typeDefs from './types.graphql' 
 
 // Resolvers graphql
-import { resolvers } from '../resolvers' 
+import { resolvers } from '../modules' 
 
+console.log(resolvers)
 // Init Apollo server
 const apolloServer = new ApolloServer({
 
@@ -24,7 +25,9 @@ const apolloServer = new ApolloServer({
             "request.credentials": "include"
         }
     },
-    subscriptions: {// Change subscriptions path
+    subscriptions: {
+        // Change subscriptions path
+        // Default value is /graphql
         path: '/subscriptions'
     },
     options: {

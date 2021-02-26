@@ -1,5 +1,12 @@
-import { query as usersQuery } from './users' 
+import { resolvers as usersResolvers } from './users' 
 
-export const query = {
-    ...usersQuery,
+console.log(usersResolvers)
+export const resolvers = {
+    query: {
+        ...usersResolvers.query,
+    },
+
+    mutation: {
+        ...usersResolvers.mutation
+    }
 }
