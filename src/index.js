@@ -1,8 +1,13 @@
 import './init/app'
+import './init/db'
 import { PORT } from './init/config'
 import { server } from './init/server'
-import './init/db'
 import { graphqlPath, subscriptionsPath } from './init/apolloServer'
+
+// MongoDB models
+import './models'
+
+
 
 server.listen(PORT, err => {
     if( !err ) {

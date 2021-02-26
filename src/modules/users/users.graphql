@@ -1,0 +1,31 @@
+type Patient {  
+    patientID: String!
+    createdAt: String
+    updatedAt: String
+}
+
+type User  {
+    _id: ID
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String
+    clinicName: String
+    clinicAddress: String
+    country: String
+    state: String
+    city: String
+    experience: Int
+    avatarUrl: String
+    facebookID: String
+    googleID: String
+    facebookAccessToken: String
+    googleAccessToken: String
+    role: String!
+    lang: String!
+    resetToken: String
+    resetTokenExp: String
+    patients: [Patient!] 
+    createdAt: String
+    updatedAt: String
+}

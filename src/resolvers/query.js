@@ -1,7 +1,5 @@
-const queries = {
-    help: () => "help text"
-}
+import { query as moduleQuery} from '../modules/'
 
 export const Query = {
-    ...queries
+    ...moduleQuery
 }

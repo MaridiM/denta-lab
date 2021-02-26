@@ -1,7 +1,7 @@
 require('dotenv').config()
 import jwt from 'jsonwebtoken'
 
-export const readToken = (reg, res, next) => {
+export const readToken = (req, res, next) => {
     const { token } = req.session
 
     if( token ) {

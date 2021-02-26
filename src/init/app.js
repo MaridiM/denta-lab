@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session(sessionOptions))
 app.use(cors(corsOptions))
 
-// app.use(readToken)
+app.use(readToken)
 
 // Static on  production build
 if (process.env.NODE_ENV === 'production') {

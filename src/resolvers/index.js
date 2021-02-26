@@ -1,5 +1,5 @@
 import { Query } from './query'
 
-module.exports.resolvers = {
+export const resolvers = {
     Query
 }

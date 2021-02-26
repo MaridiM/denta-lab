@@ -8,9 +8,7 @@ import { resolvers } from '../resolvers'
 
 // Init Apollo server
 const apolloServer = new ApolloServer({
-    subscriptions: {// Change subscriptions path
-        path: '/subscriptions'
-    },
+
     typeDefs,   //types
     resolvers,   //actions
     dataSources: () => {
@@ -25,6 +23,12 @@ const apolloServer = new ApolloServer({
         settings: {
             "request.credentials": "include"
         }
+    },
+    subscriptions: {// Change subscriptions path
+        path: '/subscriptions'
+    },
+    options: {
+        awaitRefresh: true
     }
 })
 

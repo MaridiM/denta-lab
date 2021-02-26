@@ -4,7 +4,6 @@ import classnames from 'classnames'
 import { WarningSVG, SuccessSVG } from 'icons'
 
 const Input = ({id, className, label, validate, autoComplete, noStyle, ...attrs}) => {  
-    // console.log(validate)
     const classes = classnames(
         !noStyle && 'input-field',
         className, 
