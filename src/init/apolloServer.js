@@ -28,6 +28,7 @@ const apolloServer = new ApolloServer({
         path: '/subscriptions'
     },
     options: {
+        // Wait to refresh graphql schema after editing
         awaitRefresh: true
     }
 })
