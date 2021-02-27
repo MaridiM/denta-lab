@@ -6,7 +6,8 @@ export const query = {
     getAllPersonal: async () => {
         try {
             // Find All Personal
-            return  await UserPersonal.find({})
+            console.log(UserPersonal)
+            return await UserPersonal.find({})
 
         } catch ({ message }) {
             throw new ApolloError(message)

@@ -8,7 +8,6 @@ import { graphqlPath, subscriptionsPath } from './init/apolloServer'
 import './models'
 
 
-
 server.listen(PORT, err => {
     if( !err ) {
         console.log(`✔️ Server ready at http://localhost:${PORT}${graphqlPath}`)

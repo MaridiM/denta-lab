@@ -81,3 +81,8 @@ input RegisterPatientInput {
     role: String!
 }
 
+input HelpInput {
+    userID: ID, 
+    email: String!, 
+    body: String!
+}
