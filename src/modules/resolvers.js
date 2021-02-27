@@ -1,12 +1,11 @@
 import { resolvers as usersResolvers } from './users' 
 
-console.log(usersResolvers)
 export const resolvers = {
-    query: {
+    Query: {
         ...usersResolvers.query,
     },
 
-    mutation: {
+    Mutation: {
         ...usersResolvers.mutation
     }
 }

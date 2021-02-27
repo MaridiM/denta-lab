@@ -1,0 +1,18 @@
+#import './users/schema.graphql'
+
+type Query { 
+    getAllPatients: [User!]!
+    getAllDentists: [User!]!
+    getAllPersonal: [User!]!
+}
+
+type Mutation {
+    login(user: LoginInput!): User!
+    loginGoogle(user: GoogleInput!): User!
+    loginFacebook(user: FacebookInput!): User!
+    logout(userID: ID!): String
+    registerDentists(user: RegisterDentistsInput!): User!
+    registerPatient(user: RegisterPatientInput!): User!
+    registerGoogle(user: GoogleInput!): User!
+    registerFacebook(user: FacebookInput!): User!
+}

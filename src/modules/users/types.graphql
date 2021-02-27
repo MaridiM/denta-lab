@@ -25,6 +25,7 @@ type User  {
 }
 
 type Patient {  
+    _id: ID!
     patientID: String!
     createdAt: String
     updatedAt: String
@@ -37,7 +38,7 @@ input LoginInput {
     lang: String!
 }
 
-input LoginGoogleInput {
+input GoogleInput {
     email: String!
     accessToken: String!
     googleID: String!
@@ -46,7 +47,7 @@ input LoginGoogleInput {
     lang: String!
 }
 
-input LoginFacebookInput {
+input FacebookInput {
     email: String!
     accessToken: String!
     userID: String!
@@ -55,3 +56,28 @@ input LoginFacebookInput {
     lang: String!
 
 }
+
+input RegisterDentistsInput {
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String!
+    experience: Int!
+    city: String!
+    state: String!
+    country: String!
+    clinicAddress: String!
+    clinicName: String!
+    lang: String!
+    role: String!
+}
+
+input RegisterPatientInput {
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String!
+    lang: String!
+    role: String!
+}
+
