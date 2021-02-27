@@ -1,4 +1,4 @@
-#import './users/schema.graphql'
+#import './users/types.graphql'
 
 type Query { 
     getAllPatients: [User!]!

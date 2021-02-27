@@ -2,7 +2,7 @@ import { ApolloServer } from 'apollo-server-express'
 
 // Types Deffault in graphql
 import typeDefs from '../modules/typeDefs.graphql' 
-console.log(typeDefs)
+
 // Resolvers graphql
 import { resolvers } from '../modules/resolvers' 
 
