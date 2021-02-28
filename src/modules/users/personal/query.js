@@ -6,7 +6,6 @@ export const query = {
     getAllPersonal: async () => {
         try {
             // Find All Personal
-            console.log(UserPersonal)
             return await UserPersonal.find({})
 
         } catch ({ message }) {
