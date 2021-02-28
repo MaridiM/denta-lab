@@ -6,7 +6,7 @@ export const query = {
     getAllDentists: async () => {
         try {
             // Find All Patients
-            return  await UserDentist.find({})
+            return await UserDentist.find({})
 
         } catch ({ message }) {
             throw new ApolloError(message)

@@ -1,0 +1,88 @@
+type User  {
+    _id: ID
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String
+    clinicName: String
+    clinicAddress: String
+    country: String
+    state: String
+    city: String
+    experience: Int
+    avatarUrl: String
+    facebookID: String
+    googleID: String
+    facebookAccessToken: String
+    googleAccessToken: String
+    role: String!
+    lang: String!
+    resetToken: String
+    resetTokenExp: String
+    patients: [Patient!] 
+    createdAt: String
+    updatedAt: String
+}
+
+type Patient {  
+    _id: ID!
+    patientID: String!
+    createdAt: String
+    updatedAt: String
+}
+
+input LoginInput {
+    email: String!
+    password: String!
+    role: String!
+    lang: String!
+}
+
+input GoogleInput {
+    email: String!
+    accessToken: String!
+    googleID: String!
+    signedRequest: String!
+    fullname: String!
+    lang: String!
+}
+
+input FacebookInput {
+    email: String!
+    accessToken: String!
+    userID: String!
+    signedRequest: String!
+    fullname: String!
+    lang: String!
+
+}
+
+input RegisterDentistsInput {
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String!
+    experience: Int!
+    city: String!
+    state: String!
+    country: String!
+    clinicAddress: String!
+    clinicName: String!
+    lang: String!
+    role: String!
+}
+
+input RegisterPatientInput {
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String!
+    lang: String!
+    role: String!
+}
+
+input HelpInput {
+    userID: ID, 
+    email: String!, 
+    body: String!
+}

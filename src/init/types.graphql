@@ -1,7 +1,0 @@
-#import '../modules/modules.graphql'
-
-type Query { 
-    getAllPatients: [User!]!
-    getAllDentists: [User!]!
-    getAllPersonal: [User!]!
-}
