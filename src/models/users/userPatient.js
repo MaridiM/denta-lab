@@ -84,4 +84,4 @@ const UserPatientSchema = new Schema({
     }
 })
 
-export default model("UserPatient", UserPatientSchema)
+export default model("User_Patient", UserPatientSchema)

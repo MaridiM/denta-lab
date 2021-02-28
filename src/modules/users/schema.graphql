@@ -9,11 +9,16 @@ type Mutation {
     loginGoogle(user: GoogleInput!): User!
     loginFacebook(user: FacebookInput!): User!
     logout(userID: ID!): String!
+
     registerDentists(user: RegisterDentistsInput!): User!
     registerPatient(user: RegisterPatientInput!): User!
+    registerPersonal(user: RegisterPersonalInput!): User!
+
     registerGoogle(user: GoogleInput!): User!
     registerFacebook(user: FacebookInput!): User!
+
     forgetPassword(email: String!): String!
     resetPassword(password: String!): String!
+    
     help(body: HelpInput!): String!
 } 

@@ -67,7 +67,7 @@ const UserDentistSchema = new Schema({
             {
                 patientID: {
                     type: Schema.Types.ObjectId,
-                    ref: 'UserPatient'
+                    ref: 'User_Patient'
                 },
                 createdAt: {
                     type: Date,
@@ -103,4 +103,4 @@ const UserDentistSchema = new Schema({
     }
 })
 
-export default model("UserDentist", UserDentistSchema)
+export default model("User_Dentist", UserDentistSchema)

@@ -76,4 +76,4 @@ const UserPersonalSchema = new Schema({
     }
 })
 
-export default model("UserPersonal", UserPersonalSchema)
+export default model("User_Personal", UserPersonalSchema)

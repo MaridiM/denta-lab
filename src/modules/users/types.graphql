@@ -81,6 +81,15 @@ input RegisterPatientInput {
     role: String!
 }
 
+input RegisterPersonalInput {
+    fullname: String!
+    email: String!
+    phone: String!
+    password: String!
+    lang: String!
+    role: String!
+}
+
 input HelpInput {
     userID: ID, 
     email: String!, 
