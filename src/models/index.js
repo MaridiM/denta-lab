@@ -1,6 +1,6 @@
 //  Reexporting models
 export {
-    UserAdmin,
+    UserPersonal,
     UserDentist,
     UserPatient,
 } from './users'
