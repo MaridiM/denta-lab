@@ -1,7 +1,7 @@
 import { ApolloError } from 'apollo-server-express'
 import bcrypt from 'bcryptjs'
 // Models
-import { UserDentist, UserPatient, UserPersonal } from '../../models'
+import { UserDentist, UserPatient, UserPersonal, User } from '../../models'
 
 
 
@@ -52,16 +52,25 @@ export const mutation = {
         try{
             // Register by default form
             if (user) {
-                // Check email
-                const checkDentistEmail = await UserDentist.findOne({ email: user.email })
-                const checkDentistPhone = await UserDentist.findOne({ phone: user.phone })
-                if ( checkDentistEmail || checkDentistPhone ) new Error('This email or phone is taken!')
+                // Check email, if find to throw Error
+                const checkDentistEmail = await User.findOne({$and: [ 
+                    { email: user.email }, 
+                    { role: 'dentist' } 
+                ]})
+                if ( checkDentistEmail) throw new Error('Some dentist took this email!')
+                
+                // Check Phone, if find to throw Error
+                const checkDentistPhone = await User.findOne({$and: [
+                    { phone: user.phone }, 
+                    { role: 'dentist' }
+                ]}) 
+                if ( checkDentistPhone ) throw new Error('Some dentist use this phone!')
 
                 // Hashed password
                 const hashedPassword = await bcrypt.hash(user.password, 12) 
 
-                // Create new personal
-                const dentist = new UserDentist({
+                // Create new dentist
+                const dentist = new User({
                     fullname: user.fullname, 
                     email: user.email,
                     phone: user.phone,
@@ -74,6 +83,7 @@ export const mutation = {
                     clinicName: user.clinicName,
                     lang: user.lang,
                     role: user.role,
+                    createByRegister: true,
                     patients: []
                 })
 
@@ -89,35 +99,49 @@ export const mutation = {
             // Register by default form
             if (user) {
                 // Check patient
-                const checkPatient = await UserPatient.findOne({ email: user.email })
-                if (checkPatient) throw new Error('This email is taken!')
-
+                const checkPatient = await User
+                    .findOne({$and: [
+                        { email: user.email }, 
+                        { createByRegister: true },
+                        { role: 'patient' } 
+                    ]})
+                if (checkPatient) throw new Error('Some patient took this email!')
+                
                 // Hashed password
                 const hashedPassword = await bcrypt.hash(user.password, 12)
-
+                
                 // If email, is not exist, to check user phone
-                const checkPatientPhone = await UserPatient.findOne({ phone: user.phone })
-                if(checkPatientPhone) {
+                const checkPatientPhoneForUpdate = await User
+                .findOne({$and: [ 
+                    { phone: user.phone }, 
+                    { createByRegister: false }, 
+                    { role: 'patient' } 
+                ]})
+                if(checkPatientPhoneForUpdate) {
                     // If user phone is exist, to  update user data
-                    return await UserPatient.findByIdAndUpdate(checkPatientPhone._id, {
+                    return await User.findByIdAndUpdate(checkPatientPhone._id, {
                         fullname: user.fullname, 
                         email: user.email,
                         phone: checkPatientPhone.phone,
                         password: hashedPassword,
-                        experience: user.experience,
                         lang: user.lang,
                         role: user.role,
                         createByRegister: true,
                         createByDentist: null
                     })
-                } 
+                }
+                
+                // Check phone, if not find to create new, if find to throw Error
+                const checkPatientPhone = await User.findOne({phone: user.phone})
+                if (checkPatientPhone) throw new Error('Some patient use this phone!')
+                
+
                 // If user phone and email is not exist, to create new patient data
-                const patient = new UserPatient({
+                const patient = new User({
                     fullname: user.fullname, 
                     email: user.email,
                     phone: user.phone,
                     password: hashedPassword,
-                    experience: user.experience,
                     lang: user.lang,
                     role: user.role,
                     createByRegister: true,
@@ -135,22 +159,38 @@ export const mutation = {
         try{
             // Register by default form
             if (user) {
-                // Check email
-                const checkPersonal = await UserPersonal.findOne({ email: user.email })
-                if (checkPersonal) throw new Error('This email or phone is taken!') 
+                // Check personal mail
+                const checkPersonalEmail = await User
+                    .findOne({ 
+                        email: user.email, 
+                        $or: [
+                            { role: 'admin' }, 
+                            { role: 'personal' }
+                        ] 
+                    })
+                if (checkPersonalEmail) throw new Error('Some dentist took this email!') 
+                const checkPersonalPhone = await User
+                    .findOne({ 
+                        phone: user.phone, 
+                        $or: [
+                            { role: 'admin' }, 
+                            { role: 'personal' }
+                        ] 
+                    })
+                if (checkPersonalPhone) throw new Error('Some dentist use this phone!') 
                 
                 // Hashed password
                 const hashedPassword = await bcrypt.hash(user.password, 12) 
 
                 // Create new personal
-                const personal = new UserPersonal({
+                const personal = new User({
                     fullname: user.fullname, 
                     email: user.email,
                     phone: user.phone,
                     password: hashedPassword,
-                    experience: user.experience,
                     lang: user.lang,
-                    role: user.role
+                    role: user.role,
+                    createByRegister: true,
                 })
 
                 // Add new personal in DB
@@ -164,14 +204,14 @@ export const mutation = {
     registerGoogle: async (_, { user }, ctx) => {
         try{
             // Register by google
-
-            console.log(user)
-            return {}
+            if(user) {
+                
+            } 
         } catch ({ message }) {
             throw new ApolloError(message)
         }
     },
-    registerFacebook: async (_, user, ctx) => {
+    registerFacebook: async (_, { user }, ctx) => {
         try{
             // Register by facebook
 
