@@ -61,7 +61,15 @@ const UserSchema = new Schema({
         type: String,
         default: null
     },
+    facebookSignedRequest: {
+        type: String,
+        default: null
+    },
     googleAccessToken: {
+        type: String,
+        default: null
+    },
+    googleSignedRequest: {
         type: String,
         default: null
     },

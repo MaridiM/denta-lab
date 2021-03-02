@@ -1,12 +1,15 @@
 import { ApolloError } from 'apollo-server-express'
-import { UserPersonal } from '../../../models'
+import { User } from '../../../models'
 
 
 export const query = {
     getAllPersonal: async () => {
         try {
             // Find All Personal
-            return await UserPersonal.find({})
+            return await User.find({$or: [
+                {role: 'personal'}, 
+                {role: 'admin'} 
+            ]})
 
         } catch ({ message }) {
             throw new ApolloError(message)

@@ -1,9 +1,7 @@
 import { ApolloError } from 'apollo-server-express'
 import bcrypt from 'bcryptjs'
 // Models
-import { UserDentist, UserPatient, UserPersonal, User } from '../../models'
-
-
+import { User } from '../../models'
 
 export const mutation = {
     // Login actions
@@ -17,18 +15,21 @@ export const mutation = {
             throw new ApolloError(message)
         }
     },
-    loginFacebook: async (_, user, ctx) => {
-        try {
-            // Login by google
+
+     // Login by social
+    loginGoogle: async (_, { user }, ctx) => {
+        try{
+            // Register by google
             console.log(user)
             return {}
         } catch ({ message }) {
             throw new ApolloError(message)
         }
     },
-    loginGoogle: async (_, user, ctx) => {
-        try {
-            // Login by Facebook
+    loginFacebook: async (_, { user }, ctx) => {
+        try{
+            // Register by facebook
+
             console.log(user)
             return {}
         } catch ({ message }) {
@@ -200,28 +201,7 @@ export const mutation = {
             throw new ApolloError(message)
         }
     },
-    // Register by social
-    registerGoogle: async (_, { user }, ctx) => {
-        try{
-            // Register by google
-            if(user) {
-                
-            } 
-        } catch ({ message }) {
-            throw new ApolloError(message)
-        }
-    },
-    registerFacebook: async (_, { user }, ctx) => {
-        try{
-            // Register by facebook
-
-            console.log(user)
-            return {}
-        } catch ({ message }) {
-            throw new ApolloError(message)
-        }
-    },
-
+   
     // Reset Password
     resetPassword: async (_, { password }, ctx) => {
         try{

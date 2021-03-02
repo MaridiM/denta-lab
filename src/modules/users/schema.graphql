@@ -14,8 +14,6 @@ type Mutation {
     registerPatient(user: RegisterPatientInput!): User!
     registerPersonal(user: RegisterPersonalInput!): User!
 
-    registerGoogle(user: GoogleInput!): User!
-    registerFacebook(user: FacebookInput!): User!
 
     forgetPassword(email: String!): String!
     resetPassword(password: String!): String!
