@@ -1,7 +1,8 @@
 {
     "errors": {
         "empty": {
-            "field": "The field cannot be empty"
+            "field": "The field cannot be empty",
+            "form": "The form cannot be empty"
         },
         "password": {
             "length": "Password must be between 6-32 characters",
