@@ -11,7 +11,7 @@ const Step = ({step, maxStep, stepText}) => {
         <div className='register-form__step'>
             <div className='register-form__step-text'> 
                 <span>{`${stepText.step} ${step} ${stepText.of} ${maxStep}`}</span>
-                <Button to='/help'><HelpSVG className='register-form__step__help-img' /></Button>
+                <Button to='/help' size={null} className='btn-default' ><HelpSVG className='register-form__step__help-img' /></Button>
             </div>
             <div className='register-form__step-progress'>
                 <div className={`register-form__step-progress--step-${step}`}></div>
