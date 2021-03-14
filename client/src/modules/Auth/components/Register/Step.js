@@ -6,12 +6,16 @@ import PropTypes from 'prop-types'
 import { Button } from 'stories'
 import { HelpSVG } from 'stories/assets/icons'
 
+// Module
+import { paths } from '../../routes'
+
+
 const Step = ({step, maxStep, stepText}) => {
     return (
         <div className='register-form__step'>
             <div className='register-form__step-text'> 
                 <span>{`${stepText.step} ${step} ${stepText.of} ${maxStep}`}</span>
-                <Button to='/help' size={null} className='btn-default' ><HelpSVG className='register-form__step__help-img' /></Button>
+                <Button to={paths.help} size={null} className='btn-default' ><HelpSVG className='register-form__step__help-img' /></Button>
             </div>
             <div className='register-form__step-progress'>
                 <div className={`register-form__step-progress--step-${step}`}></div>
