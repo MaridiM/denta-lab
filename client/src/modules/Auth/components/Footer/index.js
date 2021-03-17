@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 // import { useTranslation } from "react-i18next"
-import { useTranslate } from 'hooks'
+import { useTranslate } from '../../hooks'
 
 
 // App

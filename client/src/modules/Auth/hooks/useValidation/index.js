@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { useTranslate } from 'hooks'
+import { useTranslate } from '../../hooks'
  
 export const useValidation = () => {
     const [ validate, setValidate ] = useState({})

@@ -1,9 +1,11 @@
+// Core
 import React from 'react'
 import PropTypes from 'prop-types'
 
+// Module
 import { AuthImgModule } from './modules'
 import { AuthRoutes } from './routes'
-import { useTranslate } from 'hooks'
+import { useTranslate } from './hooks'
 
 const Auth = ({changeLanguage}) => {
     return (

@@ -16,7 +16,7 @@ const {
     help
 } = paths
 
-const AuthImgModule = ({location}) => {
+const AuthImgModule = ({ location }) => {
     const { pathname } = location
 
     return (
