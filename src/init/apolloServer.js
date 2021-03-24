@@ -27,7 +27,7 @@ const apolloServer = new ApolloServer({
     subscriptions: {
         // Change subscriptions path
         // Default value is /graphql
-        path: '/subscriptions'
+        path: '/graphql'
     },
     options: {
         // Wait to refresh graphql schema after editing

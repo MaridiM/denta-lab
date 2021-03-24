@@ -1,0 +1,148 @@
+/* autoprefixer: on */
+/* autoprefixer grid: autoplace */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+@import 'reset-css'
+    
+// variables
+$primary-color: #0D53FC
+$secondary-color: #E5E5E5
+$danger-color: #ED5555
+$warning-color: #FFA500
+$success-color: #48C496
+
+$light-color: #fdfdfd
+$dark-color: #222222
+$gray-color: #F2F5FA
+
+//  Shadows variables
+$base-shadow: 0px 0px 1px rgba(0, 0, 0, .25)
+$middle-shadow: 0px 0px 4px rgba(0, 0, 0, .25)
+$strong-shadow: 0px 0px 8px rgba(0, 0, 0, .25)
+
+$primary-shadow: 0px 4px 12px rgba($primary-color, 0.25)
+$success-shadow: 0px 4px 12px rgba($success-color, 0.25)
+$danger-shadow: 0px 4px 12px rgba($danger-color, 0.25)
+$warning-shadow: 0px 4px 12px rgba($warning-color, 0.25)
+$secondary-shadow: 0px 4px 12px rgba($secondary-color, 0.25)
+
+$text-shadow: 0px 1px 1px rgba($dark-color, .3)
+
+
+// Styles
+input[disabled] 
+    pointer-events: none
+    opacity: .5
+
+textarea[disabled] 
+    pointer-events: none
+    opacity: .5
+
+.input-field
+    flex-grow: 1
+    height: auto
+    padding: 2.5px 5px
+    font-family: Roboto, sans-serif
+    .input,
+        width: 100%
+        height: auto
+        display: flex
+        align-items: center
+        justify-content: center
+        position: relative
+        &-icon
+            &-img
+                position: absolute
+                left: 25px
+                margin-top: 1px
+                opacity: .5
+                svg
+                    fill: $dark-color
+                    width: 18px
+                    height: 18px
+        &-success
+            background: rgba($success-color, 0.20) !important
+            border: 0.5px solid $success-color !important
+            box-shadow: inset $success-shadow !important
+            color: darken($success-color, 20%)
+        &-error
+            background: rgba($danger-color, 0.20)  !important
+            border: 0.5px solid $danger-color !important
+            box-shadow: inset $danger-shadow !important
+            color: darken($danger-color, 20%)
+        &-icon-status
+            position: absolute
+            right: 25px
+            width: 18px
+            height: 18px
+            &--success
+                z-index: 1
+                fill: $success-color
+            &--error
+                z-index: 1
+                fill: $danger-color
+        input
+            width: 100%
+            font-size: 16px
+            height: 40px
+            padding: 10px 20px
+            border: none
+            outline: none
+            border-radius: 10px
+            background: $gray-color
+            text-shadow: $text-shadow
+            box-shadow: inset $middle-shadow
+            box-sizing: border-box
+            &:hover
+                background: rgba($primary-color, .05)
+            &:focus
+                background: rgba($primary-color, .1)
+                box-shadow: inset $middle-shadow
+
+        input.input-error,
+        input.input-success
+            padding: 10px 50px 10px 20px 
+    .input-icon input
+        padding: 10px 20px 10px 50px     
+    .input-icon input.input-success
+        padding: 10px 50px 10px 20px 
+    .input-icon input.input-success
+        padding: 10px 50px  
+        color: darken($success-color, 20%)
+    .input-icon input.input-error
+        padding: 10px 50px  
+        color: darken($danger-color, 20%)
+
+    .textarea  
+        textarea
+            width: 100%
+            max-height: 80px
+            height: 80px
+            font-size: 14px
+            border-radius: 10px
+            padding: 10px 20px
+            font-family: Roboto, sans-serif
+            resize: none
+            border: none
+            outline: none
+            background: $gray-color
+            text-shadow: $text-shadow
+            box-shadow: inset $middle-shadow
+            box-sizing: border-box
+            &:hover
+                background: rgba($primary-color, .05)
+            &:focus
+                background: rgba($primary-color, .1)
+                box-shadow: inset $middle-shadow
+        textarea.input-success
+            background: rgba($success-color, 0.20) !important
+            border: 0.5px solid $success-color !important
+            box-shadow: inset $success-shadow !important
+            color: darken($success-color, 20%)
+        textarea.input-error
+            background: rgba($danger-color, 0.20)  !important
+            border: 0.5px solid $danger-color !important
+            box-shadow: inset $danger-shadow !important
+            color: darken($danger-color, 20%)
+
+
+

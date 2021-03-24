@@ -125,20 +125,6 @@ module.exports = function (webpackEnv) {
             require('postcss-flexbugs-fixes'),
             require('postcss-preset-env')({
               autoprefixer: {
-                overrideBrowserslist: [
-                  '>= 0.5%',
-                  'last 4 versions',
-                  'not dead',
-                  'Chrome >= 60',
-                  'Firefox >= 60',
-                  'not Edge < 79',
-                  'Firefox ESR',
-                  'iOS >= 10',
-                  'Safari >= 10',
-                  'Android >= 6',
-                  'not Explorer <= 11',
-                  'Firefox ESR',
-                ],
                 flexbox: 'no-2009',
               },
               stage: 3,
@@ -342,7 +328,6 @@ module.exports = function (webpackEnv) {
         // Support React Native Web
         // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
         'react-native': 'react-native-web',
-        'styles': path.join(paths.appSrc, 'styles'),
         // Allows for better profiling with ReactDevTools
         ...(isEnvProductionProfile && {
           'react-dom$': 'react-dom/profiling',
@@ -733,7 +718,7 @@ module.exports = function (webpackEnv) {
           extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
           formatter: require.resolve('react-dev-utils/eslintFormatter'),
           eslintPath: require.resolve('eslint'),
-          emitWarning: isEnvDevelopment && emitErrorsAsWarnings,
+          failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),
           context: paths.appSrc,
           cache: true,
           cacheLocation: path.resolve(
