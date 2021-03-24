@@ -1,7 +1,12 @@
+// Core
 import { ApolloError } from 'apollo-server-express'
 import bcrypt from 'bcryptjs'
+import { GoogleAuth } from 'google-auth-library'
+import jwt from 'jsonwebtoken'
+
 // Models
 import { User } from '../../models'
+
 
 export const mutation = {
     // Login actions
@@ -20,8 +25,12 @@ export const mutation = {
     loginGoogle: async (_, { user }, ctx) => {
         try{
             // Register by google
+            const gAuth = new GoogleAuth()
+            console.log(await gAuth)
+
+
             console.log(user)
-            return {}
+            return {_id: "jgfdgjdfk;lgd;fgdglfdgdfgdf"}
         } catch ({ message }) {
             throw new ApolloError(message)
         }
