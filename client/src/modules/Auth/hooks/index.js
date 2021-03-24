@@ -1,3 +1,6 @@
+export { useValidation } from './useValidation'
+export { useWindowSize } from './useWindowSize'
+export { useTranslate } from './useTranslate'
 export { useFacebook } from './useFacebook'
 export { useGoogle } from './useGoogle'
 export { useForm } from './useForm'

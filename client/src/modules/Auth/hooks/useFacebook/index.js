@@ -54,9 +54,9 @@ export const useFacebook = () => {
     // Initial FB by JS SDK
     window.fbAsyncInit = async () => {
         await window.FB.init({
-            appId      : process.env.REACT_APP_FACEBOOK_APP_ID,                     // App id from facebook
-            cookie     : true,                                  // Enable cookies to allow the server to access the session.
-            xfbml      : true,                                  // Parse social plugins on this webpage.
+            appId      : process.env.REACT_APP_FACEBOOK_APP_ID,                 // App id from facebook
+            cookie     : true,                                                  // Enable cookies to allow the server to access the session.
+            xfbml      : true,                                                  // Parse social plugins on this webpage.
             version    : process.env.REACT_APP_FACEBOOK_APP_VERSION                                // Use this Graph API version for this call.
         })
         

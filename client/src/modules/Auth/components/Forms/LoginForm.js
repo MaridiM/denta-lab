@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // App
-import { useWindowSize } from 'hooks'
+import { useWindowSize } from '../../hooks'
 import { Input, Button, Select } from 'stories'
 
 // Module

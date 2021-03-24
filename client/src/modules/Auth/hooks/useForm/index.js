@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { useValidation } from 'hooks'
+import { useValidation } from '../../hooks'
 
 export const useForm = ( initialState = {} ) => {
     const [ form, setForm ] = useState(initialState)

@@ -39,11 +39,11 @@ input LoginInput {
 }
 
 input GoogleInput {
-    email: String!
-    accessToken: String!
+    # email: String!
+    # accessToken: String!
     googleID: String!
-    signedRequest: String!
-    fullname: String!
+    # signedRequest: String!
+    # fullname: String!
     lang: String!
 }
 

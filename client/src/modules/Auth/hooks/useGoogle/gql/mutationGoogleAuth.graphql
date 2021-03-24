@@ -1,0 +1,6 @@
+mutation loginGoogle($GoogleInput: GoogleInput!) {
+  loginGoogle(user: $GoogleInput) {
+    _id
+  }
+}
+
