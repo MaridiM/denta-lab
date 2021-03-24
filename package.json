@@ -29,17 +29,17 @@
   },
   "homepage": "https://github.com/MaridiM/denta-lab#readme",
   "devDependencies": {
-    "@babel/cli": "^6.18.0",
-    "@babel/core": "^6.18.1",
-    "@babel/node": "^6.18.0",
-    "@babel/plugin-transform-runtime": "^6.18.8",
-    "@babel/preset-env": "^6.18.5",
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/node": "^7.13.0",
+    "@babel/plugin-transform-runtime": "^7.13.8",
+    "@babel/preset-env": "^7.13.5",
     "babel-plugin-import-graphql": "^2.8.1",
     "concurrently": "^5.3.0",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
-    "@babel/runtime": "^6.18.8",
+    "@babel/runtime": "^7.13.8",
     "@graphql-tools/merge": "^6.2.10",
     "apollo-datasource": "^0.7.3",
     "apollo-server-express": "^2.21.0",
